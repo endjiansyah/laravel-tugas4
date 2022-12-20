@@ -39,7 +39,7 @@
                             <td>${article.description}</td>
                             <td><img src="${article.gambar}" alt="${article.title}" width="100px"></td>
                             <td>
-                                <a href="http://localhost:8000/detail/${article.id}" class="btn btn-sm btn-primary">Detail</a>
+                                <a href="http://localhost:8000/article/edit/${article.id}" class="btn btn-sm btn-primary">Edit</a>
                                 <button onclick="deleteArticle(${article.id})"  class="btn btn-sm btn-danger">Hapus</button>
                             </td>
                             </tr>

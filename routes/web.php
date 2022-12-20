@@ -28,6 +28,14 @@ Route::prefix("article")->get('/create', function () {
     return view('article.create');
 })->name("article.create");
 
+Route::get('/detail/{id}', function ($id) {
+    return view('article.detail', ["id" => $id]);
+})->name("article.detail");
+
+Route::prefix("article")->get('/edit/{id}', function ($id) {
+    return view('article.edit', ["id" => $id]);
+})->name("article.edit");
+
 // ---------------------
 Route::prefix("produk")
     ->name("produk.")
@@ -48,12 +56,12 @@ Route::prefix("article")
     ->controller(articleController::class)
     ->group(function () {
         // Route::get("/", "list")->name('index');
-        Route::get("/detail/{article}", "detail")->name("detail");
-        Route::get("/edit/{article}", "edit")->name("edit")->middleware(['withAuth']);
+        // Route::get("/detail/{article}", "detail")->name("detail");
+        // Route::get("/edit/{article}", "edit")->name("edit")->middleware(['withAuth']);
         // Route::get("/create", "create")->name("create")->middleware(['withAuth']);
 
         // Route::post("/store", "store")->name("store")->middleware(['withAuth']);
-        Route::put("/update/{article}", "update")->name("update")->middleware(['withAuth']);
+        // Route::put("/update/{article}", "update")->name("update")->middleware(['withAuth']);
         Route::delete("/destroy/{article}", "destroy")->name("destroy")->middleware(['withAuth']);
     });
 // ----------------

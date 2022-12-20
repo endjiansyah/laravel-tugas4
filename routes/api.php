@@ -28,5 +28,5 @@ Route::delete("/produk/{id}", [ProdukController::class, "destroy"]);
 Route::get("/article", [ArticleController::class, "index"]);
 Route::get("/article/{id}", [ArticleController::class, "show"]);
 Route::post("/article", [ArticleController::class, "store"]);
-Route::put("/article/{id}", [ArticleController::class, "update"]);
-Route::delete("/article/{id}", [ArticleController::class, "destroy"]);
+Route::post("/article/{id}/edit", [ArticleController::class, "update"]);
+Route::post("/article/{id}/delete", [ArticleController::class, "destroy"]);
